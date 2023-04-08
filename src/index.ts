@@ -22,7 +22,7 @@ const getMap = async (): Promise<{ goal: string[][] }> => {
     return response.data;
 
   } catch (error) {
-    console.error("Error in getMap:", error);
+    console.error("Error in getMap:", (error as Error).message);
     throw error;
   }
 };
@@ -52,7 +52,7 @@ const main = async () => {
         console.log("Command not recognized");
     }
   } catch (error) {
-    console.error("Error in main:", error);
+    console.error("Error in main:", (error as Error).message);
   }
 };
 
