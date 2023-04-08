@@ -3,11 +3,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const BASE_URL = process.env.BASE_URL;
-const REQUEST_TIMEOUT = process.env.REQUEST_TIMEOUT;
 
 const instance = axios.create({
   baseURL: BASE_URL,
-  timeout: parseInt(REQUEST_TIMEOUT!),
 });
 
 interface AstralObjectInterface {

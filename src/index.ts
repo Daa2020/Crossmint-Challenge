@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const CANDIDATE_ID: string = process.env.CANDIDATE_ID as string;
-const REQUEST_TIMEOUT: number = parseInt(process.env.REQUEST_TIMEOUT as string);
 
 // Fetch the map data from the API
 const getMap = async (): Promise<{ goal: string[][] }> => {
@@ -13,7 +12,6 @@ const getMap = async (): Promise<{ goal: string[][] }> => {
 
     const instance = axios.create({
       baseURL: process.env.BASE_URL,
-      timeout: REQUEST_TIMEOUT,
     });
 
     const url = `/map/${CANDIDATE_ID}/goal`;
